@@ -20,9 +20,11 @@ import br.gov.caixa.psi.service.ContratoCreditoImobiliarioService;
 @RequestMapping("/contratos")
 public class ContratoCreditoImobiliarioController {
 
+	private final ContratoCreditoImobiliarioService service;
     @Autowired
-    private ContratoCreditoImobiliarioService service;
-
+    public ContratoCreditoImobiliarioController(ContratoCreditoImobiliarioService contratoCreditoImobiliarioService) {
+    	this.service = contratoCreditoImobiliarioService;
+    }
     @GetMapping("/")
     public ResponseEntity<List<ContratoCreditoImobiliario>> getAll() {
         List<ContratoCreditoImobiliario> contratos = service.findAll();
