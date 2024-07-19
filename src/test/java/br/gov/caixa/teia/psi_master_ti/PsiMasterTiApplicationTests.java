@@ -8,6 +8,6 @@ class PsiMasterTiApplicationTests {
 
 	@Test
 	void contextLoads() {
+   // Testa apenas os contextos
 	}
-
 }
