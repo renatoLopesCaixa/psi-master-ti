@@ -12,8 +12,12 @@ import br.gov.caixa.psi.repository.ContratoCreditoImobiliarioRepository;
 @Service
 public class ContratoCreditoImobiliarioService {
 
+    private final ContratoCreditoImobiliarioRepository repository;
+    
     @Autowired
-    private ContratoCreditoImobiliarioRepository repository;
+    public ContratoCreditoImobiliarioService(ContratoCreditoImobiliarioRepository contratoCreditoImobiliarioRepository) {
+    	this.repository = contratoCreditoImobiliarioRepository;
+    }
 
     public List<ContratoCreditoImobiliario> findAll() {
         return repository.findAll();
